@@ -8,7 +8,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc --build",
-    "clean": "tsc --build --clean"
+    "clean": "tsc --build --clean",
+    "refreshVSToken": "vsts-npm-auth -config .npmrc"
   },
   "dependencies": {
     "@microsoft/applicationinsights-analytics-js": "^3.0.2",
