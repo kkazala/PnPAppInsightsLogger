@@ -4,7 +4,9 @@ specifiers:
   '@microsoft/applicationinsights-analytics-js': ^3.0.2
   '@microsoft/applicationinsights-react-js': ^3.4.3
   '@microsoft/applicationinsights-web': ^3.0.2
+  '@pnp/core': ^3.16.0
   '@pnp/logging': ~3.16.0
+  '@pnp/queryable': ^3.16.0
   history: ^5.3.0
   react: 17.0.1
   tslib: 2.3.1
@@ -14,7 +16,9 @@ dependencies:
   '@microsoft/applicationinsights-analytics-js': 3.0.2_fg2qwr76t7zgfkdw5n6evjk5ui
   '@microsoft/applicationinsights-react-js': 3.4.3_3q64me6fbyhpynkqs6zar5k6ty
   '@microsoft/applicationinsights-web': 3.0.2_fg2qwr76t7zgfkdw5n6evjk5ui
+  '@pnp/core': 3.16.0
   '@pnp/logging': 3.16.0
+  '@pnp/queryable': 3.16.0
   history: 5.3.0
 
 devDependencies:
@@ -219,10 +223,25 @@ packages:
       typescript: 4.5.5
     dev: false
 
+  /@pnp/core/3.16.0:
+    resolution: {integrity: sha512-nKUAhyIn2NDvsG9BHcRjdUfeql814s57R9aM+SvqF10i2B7PzSyEnqZpbKuc3e/4K9ZSrXlA539B6aNGGRNmFw==}
+    engines: {node: '>=14.15.1'}
+    dependencies:
+      tslib: 2.4.1
+    dev: false
+
   /@pnp/logging/3.16.0:
     resolution: {integrity: sha512-GzxPnF5BVdY5BBEEd7mdfKQyE7w5ZvoL7uTQ8qwLEy0RGgbdXfiZz649jmwDAbhI69K5vnxrwBc/UEv9Gfz1bw==}
     engines: {node: '>=14.15.1'}
     dependencies:
+      tslib: 2.4.1
+    dev: false
+
+  /@pnp/queryable/3.16.0:
+    resolution: {integrity: sha512-drKaMGKaFfBbuR2oHWi2EHMImFr3hzf6tM7a64BJNbwyeVNyzhMert/lMsdyV/PmfNR6fIiIjw3lE8XkHFKOmg==}
+    engines: {node: '>=14.15.1'}
+    dependencies:
+      '@pnp/core': 3.16.0
       tslib: 2.4.1
     dev: false
 
