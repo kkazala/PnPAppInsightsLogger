@@ -28,7 +28,7 @@ steps:
 
 - powershell: |
     # Get curr version from SiteDesigns package
-    $currPackageJson = Get-Content -Path "$(Build.ArtifactStagingDirectory)\SiteDesigns\package.json" -Raw -ErrorAction Stop | ConvertFrom-Json
+    $currPackageJson = Get-Content -Path "$(Build.SourcesDirectory)\package.json" -Raw -ErrorAction Stop | ConvertFrom-Json
     $currVersion= [version]$currPackageJson.version
 
     Write-Host "##vso[build.addbuildtag]$($currVersion)"
