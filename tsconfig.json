@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "jsx": "react",
     "declaration": true,
@@ -26,5 +26,9 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib"
   ]
 }

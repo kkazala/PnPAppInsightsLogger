@@ -51,7 +51,7 @@ export class  AppInsightsLogListener implements ILogListener {
     }
 }
 
-export function setLogger({ appInsights, logLevel, console }: { appInsights: AnalyticsPlugin; logLevel: number; console: boolean; }): void {
+export function setLogger({ appInsights, logLevel, console }: { appInsights?: AnalyticsPlugin; logLevel: number; console: boolean; }): void {
     if(console){
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         Logger.subscribe(new (ConsoleListener as any)());
