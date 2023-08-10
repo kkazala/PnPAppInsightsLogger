@@ -21,6 +21,39 @@ It accepts connection string as a parameter, and returns an instance of the `App
 
 Provides `handleError` method as defined in [https://pnp.github.io/pnpjs/concepts/error-handling/#errorhandlerts](https://pnp.github.io/pnpjs/concepts/error-handling/#errorhandlerts)
 
+# Usage
+
+You may use the `setLogger` method to log information to the Console, to Application Insights, or both.
+
+To log errors to the Application Insights, you need to obtain the [Connection String](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sdk-connection-string?tabs=dotnet5), create `AppInsights` instance and reference it in the `setLoger` method. Use `Loglevel: 3` to log errors.
+
+```ts
+import { AppInsights, setLogger } from 'pnp-appinsights-listener';
+
+export interface ICorporateDesignApplicationCustomizerProperties {
+  logLevel?: number;
+  appInsightsConnString?: string;
+}
+
+export default class CorporateDesignApplicationCustomizer {
+    if (this.properties.appInsightsConnString) {
+      const ai = AppInsights(this.properties.appInsightsConnString);
+      setLogger({
+        appInsights: ai,
+        logLevel: this.properties.logLevel,
+        console: true
+      });
+    }
+    else {
+      setLogger({
+        logLevel: this.properties.logLevel,
+        console: true
+      });
+    }
+}
+```
+
+
 ### References
 
 - [ConsoleListener](https://pnp.github.io/pnpjs/logging/#consolelistener)
