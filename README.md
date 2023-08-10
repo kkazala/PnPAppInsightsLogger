@@ -53,8 +53,7 @@ export default class CorporateDesignApplicationCustomizer {
 }
 ```
 
-
-### References
+## References
 
 - [ConsoleListener](https://pnp.github.io/pnpjs/logging/#consolelistener)
 - [LogLevel](https://pnp.github.io/pnpjs/logging/#log-levels)
