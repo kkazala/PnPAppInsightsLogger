@@ -2,7 +2,9 @@
 import { ReactPlugin } from "@microsoft/applicationinsights-react-js";
 import { ApplicationInsights, ITelemetryPlugin } from "@microsoft/applicationinsights-web";
 import { createBrowserHistory } from "history";
+
 const browserHistory = createBrowserHistory({});
+
 export const reactPlugin = new ReactPlugin();
 export function AppInsights(connString: string): AnalyticsPlugin {
     const ai = new ApplicationInsights({

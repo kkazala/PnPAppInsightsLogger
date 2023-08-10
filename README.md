@@ -1,25 +1,29 @@
 ﻿
+# PnP AppInsights Logger
 
+This package includes a collection of utility functions and classes designed for effortless integration of logging into Node.js web applications.
 
-# Versions
+The motivation behind creating this package stems from the idea that rather than duplicating identical utility files across every project, it's more convenient to have them bundled together.
 
-## 0.2.6
+## AppInsightsLogListener
 
-` function setLogger({ appInsights, logLevel, console }: { appInsights?: AnalyticsPlugin; logLevel: number; console: boolean; }): void `
-appInsights parameter NOT mandatory
+A custom log listener using `PnPjs` library and created according to the [Create a Custom Listener](https://pnp.github.io/pnpjs/logging/#create-a-custom-listener). It sends logs to the **Application Insights.**
+This code is inspired by [Track SPFx logs using PnP Logging and Azure Application Insights](https://ravichandran.blog/2020/05/31/track-spfx-logs-using-pnp-logging-and-azure-application-insights/)
 
-## Publish
-`npm publish`
+`setLogger` method subscribes to `ConsoleListener`, custom `Application Insights Listener`, or both. It also suports setting `log level`.
 
+## AppInsights
 
-## Notes
+A helper method using [Application Insights JavaScript SDK](https://github.com/microsoft/ApplicationInsights-JS#readme).
+It accepts connection string as a parameter, and returns an instance of the `ApplicationInsights`.
 
-If you call tsc from the command line with a specific file path, it will ignore your tsconfig.json
-Typescript docs (<https://www.typescriptlang.org/docs/handbook/tsconfig-json.html>):
-_When input files are specified on the command line, tsconfig.json files are ignored._
+## handleError
 
-to allow rush-pnpm link --global "pnp-appinsights-listener":
-pnpm config set pnpm-prefix C:\Users\kinga\AppData\Roaming\npm\pnpm-global\5\node_modules
+Provides `handleError` method as defined in [https://pnp.github.io/pnpjs/concepts/error-handling/#errorhandlerts](https://pnp.github.io/pnpjs/concepts/error-handling/#errorhandlerts)
 
+### References
 
-<https://cameronnokes.com/blog/the-30-second-guide-to-publishing-a-typescript-package-to-npm/>
+- [ConsoleListener](https://pnp.github.io/pnpjs/logging/#consolelistener)
+- [LogLevel](https://pnp.github.io/pnpjs/logging/#log-levels)
+- [Create a Custom Listener](https://pnp.github.io/pnpjs/logging/#create-a-custom-listener)
+- [Track SPFx logs using PnP Logging and Azure Application Insights](https://ravichandran.blog/2020/05/31/track-spfx-logs-using-pnp-logging-and-azure-application-insights/)
