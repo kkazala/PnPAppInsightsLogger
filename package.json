@@ -1,8 +1,14 @@
 {
-  "name": "@ethz/pnp-appinsights-listener",
+  "name": "pnp-appinsights-listener",
   "version": "1.0.0",
   "type": "module",
   "private": false,
+  "homepage": "https://github.com/kkazala/PnPAppInsightsLogger",
+  "license": "MIT",
+  "author": {
+    "name": "Kinga Kazala",
+    "url": "https://dev.to/kkazala"
+  },
   "engines": {
     "node": ">=16.13.0 <17.0.0"
   },
