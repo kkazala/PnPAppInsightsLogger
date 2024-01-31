@@ -34,3 +34,5 @@ obj
 *.scss.ts
 
 temp
+
+.npmrc

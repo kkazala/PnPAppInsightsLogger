@@ -1,7 +1,6 @@
 {
   "name": "pnp-appinsights-listener",
-  "version": "1.0.0",
-  "type": "module",
+  "version": "1.0.1",
   "private": false,
   "homepage": "https://github.com/kkazala/PnPAppInsightsLogger",
   "license": "MIT",
@@ -10,17 +9,18 @@
     "url": "https://dev.to/kkazala"
   },
   "engines": {
-    "node": ">=16.13.0 <17.0.0"
+    "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"
   },
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "dev": "webpack --config webpack.dev.js",
-    "prod": "webpack --config webpack.prod.js",
-
-    "build": "tsc --build",
-    "clean": "tsc --build --clean",
-    "refreshVSToken": "vsts-npm-auth -config .npmrc"
+    "prod": "webpack --config webpack.prod.js && node tools/SetupPackage.js",
+    "publish-npm":"cd dist && npm publish",
+      "build": "tsc --build",
+      "clean": "tsc --build --clean",
+    "refreshVSToken": "vsts-npm-auth -config .npmrc",
+    "prebuild-Package": " node tools/SetupPackage.js"
   },
   "dependencies": {
     "@microsoft/applicationinsights-analytics-js": "^3.0.7",

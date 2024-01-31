@@ -1,11 +1,11 @@
 ﻿const path = require('path');
 
 module.exports = {
-    entry: { appinsightsloader: './src/index.mts' },
+    entry:  './src/index.ts' ,
     module: {
         rules: [
             {
-                test: /(\.mts$)|(\.ts?$)/, //test: /\.([cm]?ts|tsx)$/,
+                test: /(\.ts?$)/, //test: /\.([cm]?ts|tsx)$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
@@ -13,10 +13,10 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [".mts", ".ts", ".tsx", ".js"],//['.tsx', '.ts', '.js', '.jsx'],
+        extensions: [ ".ts", ".tsx", ".js"],//['.tsx', '.ts', '.js', '.jsx'],
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
          clean: true,
     },
