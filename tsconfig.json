@@ -1,34 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "jsx": "react",
-    "declaration": true,
+    "outDir": "./dist/",
     "sourceMap": true,
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "outDir": "lib",
-    "inlineSources": false,
-    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "noUnusedLocals": false,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules/@microsoft"
-    ],
+    "esModuleInterop": true,
+    // Only emit .d.ts files; do not emit .js files.
+    // "emitDeclarationOnly": true,
+    // Do not emit compiler output files like JavaScript source code, source-maps or declarations.
+    "noEmit": false,
+    // The input module resolution system, "bundler" mode support an hybrid of CommonJS and ESM.
+    // If it's not a requirement for your project, you can use "nodenext" instead.
+    "moduleResolution": "bundler",
+    // Allow using ".ts" and ".tsx" file extensions in import paths.
+    // Allow imports to include TypeScript file extensions. Requires '--moduleResolution bundler' and either '--noEmit' or '--emitDeclarationOnly' to be set.
+    // "allowImportingTsExtensions": true,
     "lib": [
       "es2021",
-      "dom",
+      "dom"
     ]
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib"
-  ]
+  }
 }
