@@ -1,9 +1,9 @@
 ﻿# Versions
 
-## 1.0.1
+## 1.0.2
 
-Update dependencies
-Node 18.18.2 compatibile
+Update dependencies, update readme
+Node 18.18.2 compatible
 
 ## 1.0.0
 

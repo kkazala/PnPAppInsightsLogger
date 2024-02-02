@@ -39,7 +39,7 @@ export default class CorporateDesignApplicationCustomizer {
     if (this.properties.appInsightsConnString) {
       const ai = AppInsights(this.properties.appInsightsConnString);
       setLogger({
-        appInsights: ai,
+        appInsights: ai.appInsights,
         logLevel: this.properties.logLevel,
         console: true
       });
