@@ -53,6 +53,16 @@ export default class CorporateDesignApplicationCustomizer {
 }
 ```
 
+## Make sure the version of the React plugin is compatible with your version of Application Insights
+
+Make sure the version of the solution is compatible with your version of SPFx and Application Insights. For more information, see
+[SPFx development environment compatibility](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/compatibility#spfx-development-environment-compatibility)
+and [Compatibility Matrix for the React plugin](https://github.com/microsoft/applicationinsights-react-js#compatibility-matrix).
+
+| pnp-appinsights-listener|**SPFx**| Node (LTS) | NPM |TypeScript|React|=>|Application Insights|React plugin|
+|-|-|-|-|-|-|-|-|-|
+|1.0.2|**1.18.2**|v16,**v18** | v5, v6, v7, v8, **v9**|v4.5, **v4.7**| **v17.0.1**|=>|^2.8.12|**3.4.2**|
+
 ## References
 
 - [ConsoleListener](https://pnp.github.io/pnpjs/logging/#consolelistener)
