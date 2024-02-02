@@ -1,7 +1,8 @@
 {
   "name": "pnp-appinsights-listener",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
+  "type": "module",
   "homepage": "https://github.com/kkazala/PnPAppInsightsLogger",
   "license": "MIT",
   "author": {
@@ -11,27 +12,28 @@
   "engines": {
     "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"
   },
-  "main": "index.js",
+  "main": "ApplicationInsightsLoger.js",
   "types": "index.d.ts",
   "scripts": {
-    "dev": "webpack --config webpack.dev.js",
-    "prod": "webpack --config webpack.prod.js && node tools/SetupPackage.js",
-    "publish-npm":"cd dist && npm publish",
-      "build": "tsc --build",
-      "clean": "tsc --build --clean",
+    "dev": "webpack --config webpack.dev.mjs",
+    "prod": "webpack --config webpack.prod.mjs && node tools/SetupPackage.js",
+    "publish-npm": "cd dist && npm publish",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
     "refreshVSToken": "vsts-npm-auth -config .npmrc",
     "prebuild-Package": " node tools/SetupPackage.js"
   },
   "dependencies": {
-    "@microsoft/applicationinsights-analytics-js": "^3.0.7",
-    "@microsoft/applicationinsights-react-js": "^17.0.3",
-    "@microsoft/applicationinsights-web": "^3.0.7",
+    "@microsoft/applicationinsights-analytics-js": "^2.8.12",
+    "@microsoft/applicationinsights-react-js": "3.4.2",
+    "@microsoft/applicationinsights-web": "^2.8.12",
     "@pnp/core": "^3.22.0",
     "@pnp/logging": "^3.22.0",
     "@pnp/queryable": "^3.22.0",
-    "history": "^5.3.0"
+    "history": "^5.1.0"
   },
   "devDependencies": {
+    "gulp": "~4.0.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
     "webpack": "^5.90.0",
